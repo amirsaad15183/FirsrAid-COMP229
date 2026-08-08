@@ -10,6 +10,7 @@ import {
   useParams,
   useSearchParams,
 } from 'react-router-dom'
+import { calculateDuration } from './lib/courseSchedule'
 import './App.css'
 import heroImage from './assets/images/lifeready-cpr-training-hero.png'
 
@@ -233,7 +234,7 @@ function courseDayValue(value) {
   return new Date(value).toISOString().slice(0, 10)
 }
 
-function CourseCard({ course, compact = false }) {
+export function CourseCard({ course, compact = false }) {
   return (
     <article className={`course-card ${compact ? 'compact' : ''}`} data-cy="course-card">
       <div className="course-card-top"><span className="course-category">{course.category}</span><span className="course-format">{course.format === 'blended' ? 'Blended' : 'Full'}</span></div>
@@ -412,14 +413,6 @@ const courseDefaults = {
   'Emergency First Aid': { price: '100', startTime: '09:00', endTime: '15:00' },
   'CPR/AED': { price: '80', startTime: '09:00', endTime: '13:00' },
   BLS: { price: '80', startTime: '09:00', endTime: '13:00' },
-}
-
-function calculateDuration(startTime, endTime) {
-  if (!startTime || !endTime) return null
-  const [startHour, startMinute] = startTime.split(':').map(Number)
-  const [endHour, endMinute] = endTime.split(':').map(Number)
-  const minutes = (endHour * 60 + endMinute) - (startHour * 60 + startMinute)
-  return minutes > 0 ? minutes / 60 : null
 }
 
 function ScheduleClassFormV2({ initial, locations, onSave, onCancel, saving }) {

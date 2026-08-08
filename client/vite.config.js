@@ -21,7 +21,10 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     outDir: "../dist/app",
-    
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.js',
+    css: true,
   },
 });
-

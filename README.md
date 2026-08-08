@@ -64,11 +64,23 @@ npm run seed:admin
 ## Quality checks
 
 ```powershell
+npm run test:unit
 npm run lint
 npm run build
 npm audit --omit=dev --audit-level=high
 npm --prefix client audit --omit=dev --audit-level=high
 ```
+
+## Deploy to Render
+
+The repository includes `render.yaml` for a single Express service that builds the React application and serves it from the same secure origin as the API.
+
+1. Push the current `main` branch to GitHub.
+2. In Render, select **New > Blueprint**, connect this GitHub repository, and select `main`.
+3. Enter only the `MONGODB_URI` secret when Render asks. Render generates `JWT_SECRET`; `NODE_ENV` and `TRUST_PROXY` are set in the blueprint.
+4. Wait for the health check at `/api/health` to pass, then open the generated `onrender.com` URL.
+
+`RENDER_EXTERNAL_URL` is supplied by Render and is used automatically as the allowed production browser origin. Do not add real secrets to `render.yaml` or GitHub.
 
 ## Project tracking and submission evidence
 
@@ -78,4 +90,4 @@ npm --prefix client audit --omit=dev --audit-level=high
 
 ## Security note
 
-Never commit `.env`, database connection strings, administrator credentials, or JWT secrets. For Render deployment, set `NODE_ENV=production`, use a JWT secret of at least 32 characters, set `CLIENT_ORIGIN` to the deployed frontend URL, and set `TRUST_PROXY=true`.
+Never commit `.env`, database connection strings, administrator credentials, or JWT secrets. Render provides a generated production `JWT_SECRET`; the application also requires it to be at least 32 characters long. `CLIENT_ORIGIN` can be used for another host, while Render deployments use the automatically supplied `RENDER_EXTERNAL_URL`.

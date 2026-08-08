@@ -27,6 +27,7 @@
     "seed:catalogue": "node --use-system-ca scripts/seed-catalogue.js",
     "migrate:user-roles": "node --use-system-ca scripts/migrate-user-roles.js",
     "test:api": "node --use-system-ca tests/part1-api.integration.mjs",
+    "test:unit": "npm --prefix client test",
     "build": "npm --prefix client run build",
     "lint": "npm --prefix client run lint",
     "preview": "npm --prefix client run preview"
@@ -34,6 +35,9 @@
   "name": "lifeready-training",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20 <25"
+  },
   "main": "index.js",
   "author": "Amir Saad",
   "license": "MIT"
