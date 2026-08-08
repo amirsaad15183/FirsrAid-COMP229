@@ -1,78 +1,66 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
-const UserSchema = new mongoose.Schema({
-     name: {
-       type: String,
-       trim: true,
-       required: 'Name is required'
-       },
-         email: {
-           type: String,
-            trim: true,
-          unique: 'Email already exists',
-          match: [/.+\@.+\..+/, 'Please fill a valid email address'],
-          required: 'Email is required'
-          },
 
-          seller: {
-type: Boolean, 
-default: false
-},
-role: { type: String, enum: ["user", "Admin"], default: "user" },
+const UserSchema = new mongoose.Schema(
+  {
+    name: { type: String, trim: true, required: 'Name is required', maxlength: 80 },
+    email: {
+      type: String,
+      trim: true,
+      lowercase: true,
+      unique: true,
+      match: [/.+\@.+\..+/, 'Please enter a valid email address'],
+      required: 'Email is required',
+    },
+    // New accounts are students by default; admin accounts are created by the seed script.
+    role: { type: String, enum: ['student', 'admin'], default: 'student' },
+    hashedPassword: { type: String, required: 'Password is required', select: false },
+    salt: { type: String, required: 'Password is required', select: false },
+  },
+  { timestamps: true, toJSON: { virtuals: true } },
+)
 
-          created: {
-          type: Date,
-          default: Date.now
-          },
-          updated: {
-          type: Date,
-          default: Date.now
-          },
-          hashed_password: {
-          type: String,
-          required: 'Password is required'
-          },
-         salt: String
-      });
-        UserSchema.virtual('password')
-    .set(function(password) {
-  this._password = password;
-    this.salt = this.makeSalt();
-    //this.hashed_password = password;
-  this.hashed_password = this.encryptPassword(password);
-    })
-      .get(function() {
-    return this._password;
-     });
-     
- UserSchema.path('hashed_password').validate(function(v) {
-    if (this._password && this._password.length < 6) {
-    this.invalidate('password', 'Password must be at least 6 characters.');
-    }
-    if (this.isNew && !this._password) {
-  this.invalidate('password', 'Password is required');
-    }
-     }, null);
+UserSchema.virtual('password')
+  .set(function setPassword(password) {
+    // Store only a salted password hash, never the original password.
+    this._password = password
+    this.salt = crypto.randomBytes(16).toString('hex')
+    this.hashedPassword = this.encryptPassword(password)
+  })
+  .get(function getPassword() {
+    return this._password
+  })
 
-     UserSchema.methods = {
-authenticate: function(plainText) {
-return this.encryptPassword(plainText) === this.hashed_password 
-},
-encryptPassword: function(password) { 
-if (!password) return ''
-try {
-return crypto
-.createHmac('sha1', this.salt) 
-.update(password)
-.digest('hex') 
-} catch (err) {
-return '' 
-}
-},
-makeSalt: function() {
-return Math.round((new Date().valueOf() * Math.random())) + '' 
-}
+UserSchema.path('hashedPassword').validate(function validatePassword() {
+  if (this._password && this._password.length < 8) {
+    this.invalidate('password', 'Password must be at least 8 characters.')
+  }
+  if (this.isNew && !this._password) {
+    this.invalidate('password', 'Password is required')
+  }
+}, null)
+
+UserSchema.methods.authenticate = function authenticate(plainText) {
+  const passwordHash = this.encryptPassword(plainText)
+  return Boolean(passwordHash) && crypto.timingSafeEqual(
+    Buffer.from(passwordHash, 'hex'),
+    Buffer.from(this.hashedPassword, 'hex'),
+  )
 }
 
-      export default mongoose.model('User', UserSchema);
+UserSchema.methods.encryptPassword = function encryptPassword(password) {
+  if (!password || !this.salt) return ''
+  return crypto.pbkdf2Sync(password, this.salt, 310000, 64, 'sha512').toString('hex')
+}
 
+UserSchema.set('toJSON', {
+  virtuals: true,
+  transform: (doc, user) => {
+    delete user.hashedPassword
+    delete user.salt
+    delete user.__v
+    return user
+  },
+})
+
+export default mongoose.model('User', UserSchema)

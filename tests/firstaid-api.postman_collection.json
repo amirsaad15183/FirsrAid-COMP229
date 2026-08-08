@@ -1,0 +1,46 @@
+{
+  "info": {
+    "name": "LifeReady Training - Part 1 API Tests",
+    "description": "Import into Postman, set the admin variables, then run the collection after creating the admin account with npm run seed:admin.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "adminEmail", "value": "admin@example.com" },
+    { "key": "adminPassword", "value": "ChangeThisToAStrongPassword" },
+    { "key": "adminToken", "value": "" },
+    { "key": "classId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Health check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/health" },
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('API is healthy', function () { pm.response.to.have.status(200); });"] } }]
+    },
+    {
+      "name": "Administrator sign in",
+      "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{adminEmail}}\",\n  \"password\": \"{{adminPassword}}\"\n}" }, "url": "{{baseUrl}}/auth/signin" },
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('Administrator can sign in', function () { pm.response.to.have.status(200); });", "pm.collectionVariables.set('adminToken', pm.response.json().token);"] } }]
+    },
+    {
+      "name": "Create a training class",
+      "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{adminToken}}" }], "body": { "mode": "raw", "raw": "{\n  \"title\": \"Standard First Aid & CPR/AED\",\n  \"category\": \"Standard First Aid\",\n  \"format\": \"in-person\",\n  \"description\": \"A scheduled first aid and CPR training session.\",\n  \"classDate\": \"2027-02-15T14:00:00.000Z\",\n  \"durationHours\": 8,\n  \"location\": \"Toronto Training Centre\",\n  \"capacity\": 18,\n  \"price\": 149.99,\n  \"instructor\": \"Alex Morgan\"\n}" }, "url": "{{baseUrl}}/api/training-classes" },
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('Administrator creates a class', function () { pm.response.to.have.status(201); });", "pm.collectionVariables.set('classId', pm.response.json()._id);"] } }]
+    },
+    {
+      "name": "List training classes",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/training-classes" },
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('Public class list is returned', function () { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"] } }]
+    },
+    {
+      "name": "Update a training class",
+      "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{adminToken}}" }], "body": { "mode": "raw", "raw": "{ \"capacity\": 20, \"status\": \"scheduled\" }" }, "url": "{{baseUrl}}/api/training-classes/{{classId}}" },
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('Administrator updates the class', function () { pm.response.to.have.status(200); pm.expect(pm.response.json().capacity).to.eql(20); });"] } }]
+    },
+    {
+      "name": "Delete a training class",
+      "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/training-classes/{{classId}}" },
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('Administrator deletes the class', function () { pm.response.to.have.status(200); });"] } }]
+    }
+  ]
+}

@@ -1,0 +1,1451 @@
+{
+    "title": "mern_",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 626,
+            "height": 585,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://localhost:3000/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://localhost:3000/",
+                    "title": "client"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SIGN UP[role=\"button\"]"
+                ],
+                [
+                    "a:nth-of-type(5) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[5]/button"
+                ],
+                [
+                    "pierce/a:nth-of-type(5) > button"
+                ],
+                [
+                    "text/Sign up"
+                ]
+            ],
+            "offsetY": 31.5,
+            "offsetX": 33
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ]
+            ],
+            "offsetY": 38.20832824707031,
+            "offsetX": 183.3333282470703
+        },
+        {
+            "type": "change",
+            "value": "jj",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "offsetY": 25.208328247070312,
+            "offsetX": 141.3333282470703
+        },
+        {
+            "type": "change",
+            "value": "jj@yahoo.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#password"
+                ],
+                [
+                    "xpath///*[@id=\"password\"]"
+                ],
+                [
+                    "pierce/#password"
+                ]
+            ],
+            "offsetY": 25.20831298828125,
+            "offsetX": 121.33332824707031
+        },
+        {
+            "type": "change",
+            "value": "jjjjjj",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#password"
+                ],
+                [
+                    "xpath///*[@id=\"password\"]"
+                ],
+                [
+                    "pierce/#password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SUBMIT"
+                ],
+                [
+                    "#root > div > div button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[2]/button"
+                ],
+                [
+                    "pierce/#root > div > div button"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 20.20831298828125,
+            "offsetX": 62.979156494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"dialog\"]",
+                    "aria/[role=\"button\"]"
+                ],
+                [
+                    "div.MuiDialog-root button"
+                ],
+                [
+                    "xpath//html/body/div[2]/div[3]/div/div[2]/a/button"
+                ],
+                [
+                    "pierce/div.MuiDialog-root button"
+                ]
+            ],
+            "offsetY": 14.58331298828125,
+            "offsetX": 45.0625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 175.3333282470703
+        },
+        {
+            "type": "change",
+            "value": "jj@yahoo.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#password"
+                ],
+                [
+                    "xpath///*[@id=\"password\"]"
+                ],
+                [
+                    "pierce/#password"
+                ]
+            ],
+            "offsetY": 27,
+            "offsetX": 162.3333282470703
+        },
+        {
+            "type": "change",
+            "value": "jjjjjj",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#password"
+                ],
+                [
+                    "xpath///*[@id=\"password\"]"
+                ],
+                [
+                    "pierce/#password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SUBMIT"
+                ],
+                [
+                    "#root > div > div button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/button"
+                ],
+                [
+                    "pierce/#root > div > div button"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 9,
+            "offsetX": 52.979156494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/MY PROFILE[role=\"button\"]"
+                ],
+                [
+                    "a:nth-of-type(5) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[5]/button"
+                ],
+                [
+                    "pierce/a:nth-of-type(5) > button"
+                ],
+                [
+                    "text/My Profile"
+                ]
+            ],
+            "offsetY": 41.5,
+            "offsetX": 32.697906494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div a svg"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/ul/li[1]/div[3]/a/button/svg"
+                ],
+                [
+                    "pierce/#root > div > div a svg"
+                ]
+            ],
+            "offsetY": 4.9895782470703125,
+            "offsetX": 11.33331298828125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Inactive"
+                ],
+                [
+                    "label input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[1]/label/span[1]/span[1]/input"
+                ],
+                [
+                    "pierce/label input"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 77.67707824707031
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SUBMIT"
+                ],
+                [
+                    "#root > div > div button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/button"
+                ],
+                [
+                    "pierce/#root > div > div button"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 41.64581298828125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/MY SHOPS[role=\"button\"]"
+                ],
+                [
+                    "a:nth-of-type(5) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[5]/button"
+                ],
+                [
+                    "pierce/a:nth-of-type(5) > button"
+                ],
+                [
+                    "text/My Shops"
+                ]
+            ],
+            "offsetY": 28.5,
+            "offsetX": 34.260406494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/​ NEW SHOP[role=\"button\"]"
+                ],
+                [
+                    "#root > div > div button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/h6/a/button"
+                ],
+                [
+                    "pierce/#root > div > div button"
+                ],
+                [
+                    "text/add_boxNew Shop"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 62.77081298828125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/​ UPLOAD LOGO"
+                ],
+                [
+                    "label > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[1]/label/span"
+                ],
+                [
+                    "pierce/label > span"
+                ],
+                [
+                    "text/Upload Logo"
+                ]
+            ],
+            "offsetY": 7,
+            "offsetX": 85.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.MuiCardContent-root"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[1]"
+                ],
+                [
+                    "pierce/div.MuiCardContent-root"
+                ],
+                [
+                    "text/New ShopUpload"
+                ]
+            ],
+            "offsetY": 95,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "C:\\fakepath\\orbit_avoid.png",
+            "selectors": [
+                [
+                    "#icon-button-file"
+                ],
+                [
+                    "xpath///*[@id=\"icon-button-file\"]"
+                ],
+                [
+                    "pierce/#icon-button-file"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ]
+            ],
+            "offsetY": 34.5,
+            "offsetX": 251.3333282470703
+        },
+        {
+            "type": "change",
+            "value": "clothings",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#description"
+                ],
+                [
+                    "xpath///*[@id=\"description\"]"
+                ],
+                [
+                    "pierce/#description"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 209.3333282470703
+        },
+        {
+            "type": "change",
+            "value": "dress",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#description"
+                ],
+                [
+                    "xpath///*[@id=\"description\"]"
+                ],
+                [
+                    "pierce/#description"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SUBMIT"
+                ],
+                [
+                    "div.MuiCardActions-root > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/button"
+                ],
+                [
+                    "pierce/div.MuiCardActions-root > button"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 13.5,
+            "offsetX": 60.58332824707031
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div a svg"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/ul/span/li/div[3]/a/button/svg"
+                ],
+                [
+                    "pierce/#root > div > div a svg"
+                ]
+            ],
+            "offsetY": 11.489578247070312,
+            "offsetX": 3.33331298828125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ],
+                [
+                    "text/clothings"
+                ]
+            ],
+            "offsetY": 32.5,
+            "offsetX": 91
+        },
+        {
+            "type": "change",
+            "value": "clothings45",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ],
+                [
+                    "text/clothings"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/​ NEW PRODUCT[role=\"button\"]"
+                ],
+                [
+                    "#root > div > div > div:nth-of-type(2) button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/div/h6/a/button"
+                ],
+                [
+                    "pierce/#root > div > div > div:nth-of-type(2) button"
+                ],
+                [
+                    "text/New Product"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 72.86457824707031
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/​ UPLOAD PHOTO"
+                ],
+                [
+                    "label > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[1]/label/span"
+                ],
+                [
+                    "pierce/label > span"
+                ],
+                [
+                    "text/Upload Photo"
+                ]
+            ],
+            "offsetY": 26.333332061767578,
+            "offsetX": 105.89582824707031
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.MuiCardContent-root"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[1]"
+                ],
+                [
+                    "pierce/div.MuiCardContent-root"
+                ]
+            ],
+            "offsetY": 90.33333396911621,
+            "offsetX": 157
+        },
+        {
+            "type": "change",
+            "value": "C:\\fakepath\\ZoomVirtualBackground2022WIMCanada.jpeg",
+            "selectors": [
+                [
+                    "#icon-button-file"
+                ],
+                [
+                    "xpath///*[@id=\"icon-button-file\"]"
+                ],
+                [
+                    "pierce/#icon-button-file"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ]
+            ],
+            "offsetY": 31.833328247070312,
+            "offsetX": 178
+        },
+        {
+            "type": "change",
+            "value": "banner",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#name"
+                ],
+                [
+                    "xpath///*[@id=\"name\"]"
+                ],
+                [
+                    "pierce/#name"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#multiline-flexible"
+                ],
+                [
+                    "xpath///*[@id=\"multiline-flexible\"]"
+                ],
+                [
+                    "pierce/#multiline-flexible"
+                ]
+            ],
+            "offsetY": 25.333328247070312,
+            "offsetX": 113
+        },
+        {
+            "type": "change",
+            "value": "pattern",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#multiline-flexible"
+                ],
+                [
+                    "xpath///*[@id=\"multiline-flexible\"]"
+                ],
+                [
+                    "pierce/#multiline-flexible"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Category"
+                ],
+                [
+                    "#category"
+                ],
+                [
+                    "xpath///*[@id=\"category\"]"
+                ],
+                [
+                    "pierce/#category"
+                ]
+            ],
+            "offsetY": 40.83331298828125,
+            "offsetX": 103
+        },
+        {
+            "type": "change",
+            "value": "kk",
+            "selectors": [
+                [
+                    "aria/Category"
+                ],
+                [
+                    "#category"
+                ],
+                [
+                    "xpath///*[@id=\"category\"]"
+                ],
+                [
+                    "pierce/#category"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Quantity"
+                ],
+                [
+                    "#quantity"
+                ],
+                [
+                    "xpath///*[@id=\"quantity\"]"
+                ],
+                [
+                    "pierce/#quantity"
+                ]
+            ],
+            "offsetY": 24.83331298828125,
+            "offsetX": 99
+        },
+        {
+            "type": "change",
+            "value": "3",
+            "selectors": [
+                [
+                    "aria/Quantity"
+                ],
+                [
+                    "#quantity"
+                ],
+                [
+                    "xpath///*[@id=\"quantity\"]"
+                ],
+                [
+                    "pierce/#quantity"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Price"
+                ],
+                [
+                    "#price"
+                ],
+                [
+                    "xpath///*[@id=\"price\"]"
+                ],
+                [
+                    "pierce/#price"
+                ]
+            ],
+            "offsetY": 34.83331298828125,
+            "offsetX": 80
+        },
+        {
+            "type": "change",
+            "value": "3",
+            "selectors": [
+                [
+                    "aria/Price"
+                ],
+                [
+                    "#price"
+                ],
+                [
+                    "xpath///*[@id=\"price\"]"
+                ],
+                [
+                    "pierce/#price"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SUBMIT"
+                ],
+                [
+                    "div.MuiCardActions-root > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/button"
+                ],
+                [
+                    "pierce/div.MuiCardActions-root > button"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 18.83331298828125,
+            "offsetX": 36.25
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/UPDATE"
+                ],
+                [
+                    "#root > div > div > div:nth-of-type(1) button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[1]/div/div[2]/button"
+                ],
+                [
+                    "pierce/#root > div > div > div:nth-of-type(1) button"
+                ],
+                [
+                    "text/Update"
+                ]
+            ],
+            "offsetY": 23.166656494140625,
+            "offsetX": 38.08331298828125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ALL SHOPS[role=\"button\"]"
+                ],
+                [
+                    "a:nth-of-type(2) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[2]/button"
+                ],
+                [
+                    "pierce/a:nth-of-type(2) > button"
+                ],
+                [
+                    "text/All Shops"
+                ]
+            ],
+            "offsetY": 33.5,
+            "offsetX": 48.96875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Cake45 Cake45 cake123"
+                ],
+                [
+                    "#root > div > div a:nth-of-type(3)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/ul/a[3]"
+                ],
+                [
+                    "pierce/#root > div > div a:nth-of-type(3)"
+                ]
+            ],
+            "offsetY": 41.65625,
+            "offsetX": 351
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > div.MuiGrid-root > div:nth-of-type(1) svg"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/span/button/svg"
+                ],
+                [
+                    "pierce/#root > div > div > div.MuiGrid-root > div:nth-of-type(1) svg"
+                ]
+            ],
+            "offsetY": 6.33331298828125,
+            "offsetX": 20.395828247070312
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/CONTINUE SHOPPING[role=\"button\"]"
+                ],
+                [
+                    "#root > div > div a:nth-of-type(2) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/a[2]/button"
+                ],
+                [
+                    "pierce/#root > div > div a:nth-of-type(2) > button"
+                ],
+                [
+                    "text/Continue Shopping"
+                ]
+            ],
+            "offsetY": 8.30206298828125,
+            "offsetX": 36.375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ALL SHOPS[role=\"button\"]"
+                ],
+                [
+                    "a:nth-of-type(2) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[2]/button"
+                ],
+                [
+                    "pierce/a:nth-of-type(2) > button"
+                ],
+                [
+                    "text/All Shops"
+                ]
+            ],
+            "offsetY": 27.5,
+            "offsetX": 38.96875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/clothings clothings dress"
+                ],
+                [
+                    "#root > div > div a:nth-of-type(5)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/ul/a[5]"
+                ],
+                [
+                    "pierce/#root > div > div a:nth-of-type(5)"
+                ]
+            ],
+            "offsetY": 35.65625,
+            "offsetX": 372
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div svg"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[2]/div/div/div[2]/span/button/svg"
+                ],
+                [
+                    "pierce/#root > div > div svg"
+                ]
+            ],
+            "offsetY": 10.33331298828125,
+            "offsetX": 18
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/CHECKOUT[role=\"button\"]"
+                ],
+                [
+                    "#root > div > div a:nth-of-type(1) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div[3]/a[1]/button"
+                ],
+                [
+                    "pierce/#root > div > div a:nth-of-type(1) > button"
+                ],
+                [
+                    "text/Checkout"
+                ]
+            ],
+            "offsetY": 21.604156494140625,
+            "offsetX": 81.46875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#_r_2f_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2f_\"]"
+                ],
+                [
+                    "pierce/#_r_2f_"
+                ]
+            ],
+            "offsetY": 26.15625,
+            "offsetX": 520
+        },
+        {
+            "type": "change",
+            "value": "dsd",
+            "selectors": [
+                [
+                    "aria/Name"
+                ],
+                [
+                    "#_r_2f_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2f_\"]"
+                ],
+                [
+                    "pierce/#_r_2f_"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cgg@yahoo.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#_r_2g_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2g_\"]"
+                ],
+                [
+                    "pierce/#_r_2g_"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "fyyg",
+            "selectors": [
+                [
+                    "aria/Address"
+                ],
+                [
+                    "#_r_2h_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2h_\"]"
+                ],
+                [
+                    "pierce/#_r_2h_"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "gygygy",
+            "selectors": [
+                [
+                    "aria/City"
+                ],
+                [
+                    "#_r_2i_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2i_\"]"
+                ],
+                [
+                    "pierce/#_r_2i_"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "ffffy",
+            "selectors": [
+                [
+                    "aria/PostalCode"
+                ],
+                [
+                    "#_r_2j_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2j_\"]"
+                ],
+                [
+                    "pierce/#_r_2j_"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Country"
+                ],
+                [
+                    "#_r_2k_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2k_\"]"
+                ],
+                [
+                    "pierce/#_r_2k_"
+                ]
+            ],
+            "offsetY": 16.822906494140625,
+            "offsetX": 481
+        },
+        {
+            "type": "change",
+            "value": "canada",
+            "selectors": [
+                [
+                    "aria/Country"
+                ],
+                [
+                    "#_r_2k_"
+                ],
+                [
+                    "xpath///*[@id=\"_r_2k_\"]"
+                ],
+                [
+                    "pierce/#_r_2k_"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/PLACEORDER[role=\"button\"]"
+                ],
+                [
+                    "div > div > a > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/a/button"
+                ],
+                [
+                    "pierce/div > div > a > button"
+                ],
+                [
+                    "text/placeOrder"
+                ]
+            ],
+            "offsetY": 20.072906494140625,
+            "offsetX": 101.4375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/USERS[role=\"button\"]"
+                ],
+                [
+                    "a:nth-of-type(3) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[3]/button"
+                ],
+                [
+                    "pierce/a:nth-of-type(3) > button"
+                ],
+                [
+                    "text/Users"
+                ]
+            ],
+            "offsetY": 22.25,
+            "offsetX": 44.95831298828125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "span.MuiButton-icon > span > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[4]/button/span[1]/span/span"
+                ],
+                [
+                    "pierce/span.MuiButton-icon > span > span"
+                ],
+                [
+                    "text/2"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 12.71875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Home[role=\"button\"]",
+                    "aria/[role=\"graphics-symbol\"]"
+                ],
+                [
+                    "a:nth-of-type(1) path"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[1]/button/svg/path"
+                ],
+                [
+                    "pierce/a:nth-of-type(1) path"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 14.96875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ALL SHOPS[role=\"button\"]"
+                ],
+                [
+                    "a:nth-of-type(2) > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a[2]/button"
+                ],
+                [
+                    "pierce/a:nth-of-type(2) > button"
+                ],
+                [
+                    "text/All Shops"
+                ]
+            ],
+            "offsetY": 25.5,
+            "offsetX": 28.96875
+        }
+    ]
+}

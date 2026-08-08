@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@cypress/chrome-recorder": "^2.3.1",
     "body-parser": "^2.2.2",
     "compression": "^1.8.1",
     "concurrently": "^10.0.1",
@@ -29,6 +30,10 @@
   },
   "scripts": {
     "dev": "concurrently 'vite' \"nodemon server.js\"",
+    "start": "node --use-system-ca server.js",
+    "server": "nodemon --exec \"node --use-system-ca\" server.js",
+    "seed:admin": "node --use-system-ca scripts/create-admin.js",
+    "test:api": "node --use-system-ca tests/part1-api.integration.mjs",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
