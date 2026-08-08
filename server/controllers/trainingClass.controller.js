@@ -1,6 +1,13 @@
 import TrainingClass from '../models/trainingClass.model.js'
 import errorHandler from '../helpers/dbErrorHandler.js'
 
+const courseDescriptions = {
+  'Standard First Aid': 'Comprehensive in-class Standard First Aid training for workplace and community learners.',
+  'Emergency First Aid': 'Focused in-class Emergency First Aid training for essential emergency response skills.',
+  'CPR/AED': 'Practical CPR/AED training with instructor-led skills practice.',
+  BLS: 'Instructor-led Basic Life Support training for healthcare professionals and learners.',
+}
+
 const classByID = async (req, res, next, id) => {
   try {
     // Load the requested record once so later route handlers can reuse it.
@@ -15,7 +22,14 @@ const classByID = async (req, res, next, id) => {
 
 const create = async (req, res) => {
   try {
-    const trainingClass = new TrainingClass({ ...req.body, createdBy: req.auth._id })
+    // The selected category is the public course title, so listings stay consistent.
+    const trainingClass = new TrainingClass({
+      ...req.body,
+      title: req.body.category,
+      description: courseDescriptions[req.body.category],
+      instructor: 'LifeReady Training Team',
+      createdBy: req.auth._id,
+    })
     await trainingClass.save()
     return res.status(201).json(trainingClass)
   } catch (error) {
@@ -28,6 +42,7 @@ const list = async (req, res) => {
     const filter = {}
     if (req.query.category) filter.category = req.query.category
     if (req.query.status) filter.status = req.query.status
+    if (req.query.location) filter.location = req.query.location
     const classes = await TrainingClass.find(filter).populate('createdBy', 'name').sort({ classDate: 1 })
     return res.json(classes)
   } catch (error) {
@@ -40,10 +55,14 @@ const read = (req, res) => res.json(req.trainingClass)
 const update = async (req, res) => {
   try {
     // Restrict updates to planned class fields and protect creator/audit data.
-    const allowedFields = ['title', 'category', 'format', 'description', 'classDate', 'durationHours', 'location', 'capacity', 'price', 'instructor', 'status']
+    const allowedFields = ['category', 'format', 'classDate', 'startTime', 'endTime', 'durationHours', 'location', 'capacity', 'price', 'status']
     allowedFields.forEach((field) => {
       if (req.body[field] !== undefined) req.trainingClass[field] = req.body[field]
     })
+    req.trainingClass.title = req.trainingClass.category
+    // The category owns these details; the admin only schedules the class.
+    req.trainingClass.description = courseDescriptions[req.trainingClass.category]
+    req.trainingClass.instructor = 'LifeReady Training Team'
     await req.trainingClass.save()
     return res.json(req.trainingClass)
   } catch (error) {

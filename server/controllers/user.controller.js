@@ -54,6 +54,12 @@ const update = async (req, res) => {
 
 const remove = async (req, res) => {
   try {
+    if (req.profile.role === 'admin') {
+      const adminCount = await User.countDocuments({ role: 'admin' })
+      if (adminCount <= 1) {
+        return res.status(409).json({ error: 'The final administrator account cannot be deleted.' })
+      }
+    }
     await req.profile.deleteOne()
     return res.json({ message: 'User deleted successfully.' })
   } catch (error) {

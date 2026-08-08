@@ -12,8 +12,8 @@ const UserSchema = new mongoose.Schema(
       match: [/.+\@.+\..+/, 'Please enter a valid email address'],
       required: 'Email is required',
     },
-    // New accounts are students by default; admin accounts are created by the seed script.
-    role: { type: String, enum: ['student', 'admin'], default: 'student' },
+    // Public registrations are regular users; administrator accounts are seeded separately.
+    role: { type: String, enum: ['user', 'admin'], default: 'user' },
     hashedPassword: { type: String, required: 'Password is required', select: false },
     salt: { type: String, required: 'Password is required', select: false },
   },

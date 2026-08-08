@@ -2,6 +2,18 @@ node_modules/
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+secrets/
+
+# Local quality-assurance renders and inspection output
+*.inspect.ndjson
+*-preview.png
+qa_docx/
+qa_pdf/
+presentation_tmp/
+spreadsheet_tmp/
+tmp_api_logs/
 
 dist/
 build/

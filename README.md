@@ -1,48 +1,81 @@
-# LifeReady Training — COMP229 Project, Part 1
+# LifeReady Training — COMP229 Web Application Project
 
-This repository is the Part 1 backend for an original first-aid, CPR/AED, and BLS class-management application. It uses Node.js, Express, MongoDB, Mongoose, JWT authentication, and an MVC structure.
+LifeReady Training is a responsive full-stack MERN application for browsing and administering first-aid, CPR/AED, and Basic Life Support (BLS) training classes. It is an original student project by Amir Saad (Student ID: 301473849).
 
-## Part 1 functionality
+## Part A — Second Release
 
-- Public account creation and sign-in.
-- Authenticated user profile read, update, and delete.
-- Administrator-only user list.
-- Public read/list API for training classes.
-- Administrator-only create, update, and delete API for training classes.
-- Postman collection containing repeatable API checks.
+This release connects the React frontend to the Express and MongoDB API and provides authenticated CRUD workflows.
 
-## Local setup
+- Public landing page with the LifeReady Training logo and dynamically loaded upcoming courses.
+- Public course catalogue with category, location, and class-date filters.
+- Account sign-up, sign-in, sign-out, and a protected My Profile page.
+- User CRUD: create an account, view/update a profile, and delete an account; administrators can view the user directory.
+- Training-class CRUD: administrators create, view, update, and delete course schedules.
+- Location CRUD: administrators create, view, update, activate/deactivate, and delete training locations.
+- Public course-information, first-aid-guide, About, and Contact pages.
+- Administrator-only company-information editor and contact-message inbox.
+- Responsive navigation that highlights the current page and changes based on the signed-in role.
 
-1. Copy `.env.example` to `.env` and provide your MongoDB Atlas connection string and a long random JWT secret.
-2. Install dependencies with `npm install`.
-3. Create the administrator account in PowerShell:
+## Technology
+
+- React, Vite, React Router, CSS
+- Node.js, Express, Mongoose, MongoDB Atlas
+- HTTP-only JWT session cookies, role-based authorization, Helmet, CORS allow-listing, rate limits, and input limits
+
+## Run locally
+
+1. Install the root and client dependencies:
 
    ```powershell
-   $env:ADMIN_NAME='Your Name'
-   $env:ADMIN_EMAIL='your-email@example.com'
-   $env:ADMIN_PASSWORD='AStrongPasswordHere'
-   npm run seed:admin
+   npm install
+   npm --prefix client install
    ```
 
-4. Start the API with `npm start`.
-5. Import `tests/firstaid-api.postman_collection.json` into Postman, set its admin variables, and run the collection. Save a screenshot of the completed run for submission.
+2. Create a local `.env` file from `.env.example`. Do not commit it.
 
-To run the repeatable command-line API test instead, set your local administrator credentials for the current PowerShell session and run:
+   ```env
+   PORT=3000
+   NODE_ENV=development
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=use_a_long_random_secret
+   CLIENT_ORIGIN=http://localhost:5173
+   TRUST_PROXY=false
+   ```
+
+3. Start the React client and Express API together from the repository root:
+
+   ```powershell
+   npm run dev
+   ```
+
+4. Open `http://localhost:5173`.
+
+## Administrator setup
+
+Set the following variables in PowerShell, then run the administrator seed script:
 
 ```powershell
-$env:TEST_ADMIN_EMAIL='your-admin-email@example.com'
-$env:TEST_ADMIN_PASSWORD='your-admin-password'
-npm run test:api
+$env:ADMIN_NAME='Your Name'
+$env:ADMIN_EMAIL='your-email@example.com'
+$env:ADMIN_PASSWORD='UseAStrongPassword'
+npm run seed:admin
 ```
 
-Save a screenshot of the successful `PASS:` results for your API-testing evidence.
+## Quality checks
 
-The API health check is available at `GET /api/health`.
+```powershell
+npm run lint
+npm run build
+npm audit --omit=dev --audit-level=high
+npm --prefix client audit --omit=dev --audit-level=high
+```
 
-## Important security note
+## Project tracking and submission evidence
 
-Never commit `.env`, MongoDB credentials, JWT secrets, or administrator passwords. The provided `.env.example` is safe to commit because it contains placeholders only.
+- The Part 2 Product Backlog and Task Board are in `deliverables/part2`.
+- The Part 1 API evidence and External Design Document are retained in `deliverables/part1`.
+- The project is intentionally a one-person submission with professor approval; repository commits are authored by Amir Saad.
 
-## Phase boundary
+## Security note
 
-This release intentionally focuses on the database, Express API, authentication, authorization, and API testing required in Part 1. React screens, website navigation, visual design, and frontend-to-API integration are Part 2 work.
+Never commit `.env`, database connection strings, administrator credentials, or JWT secrets. For Render deployment, set `NODE_ENV=production`, use a JWT secret of at least 32 characters, set `CLIENT_ORIGIN` to the deployed frontend URL, and set `TRUST_PROXY=true`.

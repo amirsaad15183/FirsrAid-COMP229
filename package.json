@@ -1,26 +1,17 @@
 {
   "dependencies": {
     "@cypress/chrome-recorder": "^2.3.1",
-    "body-parser": "^2.2.2",
     "compression": "^1.8.1",
     "concurrently": "^10.0.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
-    "crypto": "^1.0.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-jwt": "^8.5.1",
-    "formidable": "^3.5.4",
-    "global": "^4.4.0",
     "helmet": "^8.2.0",
-    "install": "^0.13.0",
     "jsonwebtoken": "^9.0.3",
-    "lodash": "^4.18.1",
-    "method-override": "^3.0.0",
     "mongodb": "^7.2.0",
-    "mongoose": "^9.6.3",
-    "npm": "^12.0.1",
-    "or": "^0.2.0"
+    "mongoose": "^9.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -29,19 +20,21 @@
     "nodemon": "^3.1.14"
   },
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon server.js\"",
+    "dev": "concurrently \"npm --prefix client run dev\" \"npm run server\"",
     "start": "node --use-system-ca server.js",
     "server": "nodemon --exec \"node --use-system-ca\" server.js",
     "seed:admin": "node --use-system-ca scripts/create-admin.js",
+    "seed:catalogue": "node --use-system-ca scripts/seed-catalogue.js",
+    "migrate:user-roles": "node --use-system-ca scripts/migrate-user-roles.js",
     "test:api": "node --use-system-ca tests/part1-api.integration.mjs",
-    "build": "vite build",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "build": "npm --prefix client run build",
+    "lint": "npm --prefix client run lint",
+    "preview": "npm --prefix client run preview"
   },
-  "name": "mern_skeleton",
+  "name": "lifeready-training",
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
-  "author": "Blessing",
+  "author": "Amir Saad",
   "license": "MIT"
 }

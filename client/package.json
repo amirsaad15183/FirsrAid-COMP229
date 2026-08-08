@@ -1,21 +1,15 @@
 {
-  "name": "client",
+  "name": "lifeready-training-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon ../server.js\"",
+    "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint src",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^9.1.1",
-    "@mui/material": "^9.1.2",
-    "concurrently": "^10.0.1",
-    "global": "^4.4.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router": "^8.1.0",

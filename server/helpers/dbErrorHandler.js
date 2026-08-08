@@ -18,7 +18,8 @@ const getErrorMessage = (error) => {
     if (firstError) return firstError.message
   }
 
-  return error?.message || 'Something went wrong.'
+  // Never expose database, mail-provider, or infrastructure details to clients.
+  return 'Request could not be processed.'
 }
 
 export default { getErrorMessage }
