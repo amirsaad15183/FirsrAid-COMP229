@@ -12,7 +12,8 @@ import {
 } from 'react-router-dom'
 import { calculateDuration } from './lib/courseSchedule'
 import './App.css'
-import heroImage from './assets/images/lifeready-cpr-training-hero.png'
+// Modern WebP keeps the home-page LCP image sharp while substantially reducing transfer size.
+import heroImage from './assets/images/lifeready-cpr-training-hero.webp'
 
 const AuthContext = createContext(null)
 const CartContext = createContext(null)
@@ -289,7 +290,37 @@ function CoursesPageV3() {
   return <div className="page container"><PageTitle title="Courses" /><div className="page-intro"><p className="eyebrow">Training calendar</p><h1>Choose your class, date, and location.</h1><p>Start by selecting the Toronto or Markham training location that works for you. Available dates update below without requiring an account.</p></div>{locations.length > 0 && <section className="location-showcase" aria-label="Training locations"><div className="location-showcase-heading"><div><p className="eyebrow">Training locations</p><h2>Where would you like to train?</h2></div><button type="button" className="text-button reset-location" onClick={() => setLocation('All')}>View all locations</button></div><div className="location-cards">{locations.map((item) => { const count = classes.filter((course) => course.location === item.name).length; const selected = location === item.name; return <button type="button" key={item._id} className={`location-card ${selected ? 'is-selected' : ''}`} aria-pressed={selected} onClick={() => setLocation(selected ? 'All' : item.name)}><span className="location-card-kicker">Training location</span><strong>{item.name}</strong><span>{item.address}</span><small>{count} {count === 1 ? 'available class' : 'available classes'} · View dates</small></button> })}</div></section>}<div className="filters filters-three"><label>Course category<select data-cy="course-category-filter" value={category} onChange={(e) => setCategory(e.target.value)}><option>All</option>{categories.map((item) => <option key={item}>{item}</option>)}</select></label><label>Location<select data-cy="course-location-filter" value={location} onChange={(e) => setLocation(e.target.value)}><option>All</option>{locationNames.map((item) => <option key={item}>{item}</option>)}</select></label><label>Class date<input data-cy="course-date-filter" type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label></div>{loading ? <Loading label="Loading courses..." /> : error ? <ErrorMessage error={error} /> : visibleClasses.length ? <div className="course-grid">{visibleClasses.map((course) => <CourseCard key={course._id} course={course} />)}</div> : <EmptyState title="No classes match those filters" text="Try another location, date, or course category." />}</div>
 }
 
-function FirstAidGuidePage() { return <div className="page container"><PageTitle title="First Aid Guide" /><div className="page-intro narrow"><p className="eyebrow">Education centre</p><h1>Know your first steps.</h1><p>This general information is not a substitute for certified training, medical advice, or emergency services. Call 911 for serious or life-threatening emergencies.</p></div><section className="emergency-callout"><strong>In an emergency</strong><span>Check for danger, call 911, and follow the dispatcher’s instructions.</span></section><div className="guide-grid"><article><span className="guide-number">01</span><h2>Check the scene</h2><p>Before helping, look for hazards such as traffic, fire, electricity, or unsafe surroundings. Do not put yourself in danger.</p></article><article><span className="guide-number">02</span><h2>Get emergency help</h2><p>Call 911 or direct a specific person to call. State the location, what happened, and any immediate risks.</p></article><article><span className="guide-number">03</span><h2>Follow trained guidance</h2><p>Follow the emergency dispatcher’s instructions while you wait for responders. Certified training builds the skill needed to respond appropriately.</p></article><article><span className="guide-number">04</span><h2>Keep learning</h2><p>Skills such as CPR/AED use and first aid are best learned in hands-on, instructor-led courses and refreshed regularly.</p></article></div><section className="guide-cta"><div><p className="eyebrow">Build confidence</p><h2>Ready to learn hands-on?</h2><p>Explore LifeReady’s planned First Aid, CPR/AED, and BLS class catalogue.</p></div><Link className="button" to="/courses">View courses</Link></section></div> }
+function FirstAidGuidePage() {
+  return <div className="page container">
+    <PageTitle title="First Aid Guide" />
+    <div className="page-intro narrow">
+      <p className="eyebrow">Education centre</p>
+      <h1>Know your first steps.</h1>
+      <p>This general information is not a substitute for certified training, medical advice, or emergency services. Call 911 for serious or life-threatening emergencies.</p>
+    </div>
+    <section className="emergency-callout">
+      <strong>In an emergency</strong>
+      <span>Check for danger, call 911, and follow the dispatcher’s instructions.</span>
+    </section>
+    <section className="guide-cta preparedness-update">
+      <div>
+        <p className="eyebrow">Preparedness reminder</p>
+        <h2>Keep your first-aid kit ready.</h2>
+        <p>Store a stocked kit in an accessible place, review its contents regularly, and replace used or expired supplies. For a life-threatening emergency, call 911 immediately.</p>
+      </div>
+    </section>
+    <div className="guide-grid">
+      <article><span className="guide-number">01</span><h2>Check the scene</h2><p>Before helping, look for hazards such as traffic, fire, electricity, or unsafe surroundings. Do not put yourself in danger.</p></article>
+      <article><span className="guide-number">02</span><h2>Get emergency help</h2><p>Call 911 or direct a specific person to call. State the location, what happened, and any immediate risks.</p></article>
+      <article><span className="guide-number">03</span><h2>Follow trained guidance</h2><p>Follow the emergency dispatcher’s instructions while you wait for responders. Certified training builds the skill needed to respond appropriately.</p></article>
+      <article><span className="guide-number">04</span><h2>Keep learning</h2><p>Skills such as CPR/AED use and first aid are best learned in hands-on, instructor-led courses and refreshed regularly.</p></article>
+    </div>
+    <section className="guide-cta">
+      <div><p className="eyebrow">Build confidence</p><h2>Ready to learn hands-on?</h2><p>Explore LifeReady’s planned First Aid, CPR/AED, and BLS class catalogue.</p></div>
+      <Link className="button" to="/courses">View courses</Link>
+    </section>
+  </div>
+}
 
 function CourseDetailsScheduleWithCart() {
   const { classId } = useParams()
