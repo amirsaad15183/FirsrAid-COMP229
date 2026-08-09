@@ -17,6 +17,7 @@
     "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
     "babel-loader": "^10.1.1",
+    "cypress": "^15.20.0",
     "nodemon": "^3.1.14"
   },
   "scripts": {
@@ -28,6 +29,7 @@
     "migrate:user-roles": "node --use-system-ca scripts/migrate-user-roles.js",
     "test:api": "node --use-system-ca tests/part1-api.integration.mjs",
     "test:unit": "npm --prefix client test",
+    "test:e2e": "cypress run --browser chrome",
     "build": "npm --prefix client run build",
     "lint": "npm --prefix client run lint",
     "preview": "npm --prefix client run preview"

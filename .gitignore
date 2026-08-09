@@ -19,6 +19,10 @@ dist/
 build/
 coverage/
 
+# Local Chrome Recorder export and generated practice test (contains test credentials).
+LifeReadytest.json
+cypress/integration/LifeReadytest.cy.js
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
