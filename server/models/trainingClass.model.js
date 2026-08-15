@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+// TrainingClass schema is the central course-schedule record used by public listings and admin CRUD.
 const TrainingClassSchema = new mongoose.Schema(
   {
     title: { type: String, trim: true, required: 'Class title is required', maxlength: 120 },

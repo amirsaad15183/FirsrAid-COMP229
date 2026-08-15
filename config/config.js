@@ -1,3 +1,4 @@
+// Central configuration: turns environment variables into one validated app settings object.
 // Render provides RENDER_EXTERNAL_URL automatically; local development uses Vite.
 const deployedClientOrigin = process.env.CLIENT_ORIGIN || process.env.RENDER_EXTERNAL_URL
 

@@ -3,6 +3,7 @@ import { expressjwt } from 'express-jwt'
 import User from '../models/user.model.js'
 import config from '../../config/config.js'
 
+// Authentication controller signs users in and guards routes using an HTTP-only JWT cookie.
 const signin = async (req, res) => {
   try {
     const email = req.body.email?.toLowerCase()

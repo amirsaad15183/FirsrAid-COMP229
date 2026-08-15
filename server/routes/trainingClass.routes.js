@@ -2,6 +2,7 @@ import express from 'express'
 import authCtrl from '../controllers/auth.controller.js'
 import trainingClassCtrl from '../controllers/trainingClass.controller.js'
 
+// This route map connects HTTP endpoints to CRUD handlers and applies admin protection to changes.
 const router = express.Router()
 
 router.route('/api/training-classes')

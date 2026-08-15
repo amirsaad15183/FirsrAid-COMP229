@@ -1,6 +1,7 @@
 import TrainingClass from '../models/trainingClass.model.js'
 import errorHandler from '../helpers/dbErrorHandler.js'
 
+// Training-class controller contains the project-specific CRUD rules for scheduled courses.
 const courseDescriptions = {
   'Standard First Aid': 'Comprehensive in-class Standard First Aid training for workplace and community learners.',
   'Emergency First Aid': 'Focused in-class Emergency First Aid training for essential emergency response skills.',

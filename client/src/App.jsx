@@ -15,6 +15,7 @@ import './App.css'
 // Modern WebP keeps the home-page LCP image sharp while substantially reducing transfer size.
 import heroImage from './assets/images/lifeready-cpr-training-hero.webp'
 
+// Main frontend composition file: shared state, API helpers, pages, and protected React routes live here.
 const AuthContext = createContext(null)
 const CartContext = createContext(null)
 const categories = ['Emergency First Aid', 'Standard First Aid', 'CPR/AED', 'BLS']

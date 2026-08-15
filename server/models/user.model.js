@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 
+// User schema defines account data and the password-hashing behavior stored in MongoDB.
 const UserSchema = new mongoose.Schema(
   {
     name: { type: String, trim: true, required: 'Name is required', maxlength: 80 },

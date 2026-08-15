@@ -13,6 +13,7 @@ import locationRoutes from './routes/location.routes.js'
 import companyInfoRoutes from './routes/companyInfo.routes.js'
 import contactMessageRoutes from './routes/contactMessage.routes.js'
 
+// Express composition root: security middleware, API routes, and the production React build meet here.
 const app = express()
 const currentWorkingDir = process.cwd()
 const clientBuildPath = path.join(currentWorkingDir, 'dist', 'app')
